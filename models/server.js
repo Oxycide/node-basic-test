@@ -17,6 +17,7 @@ class Server{
 
         this.app.use('/api', routes);
 
+
     }
 
 
@@ -27,6 +28,8 @@ class Server{
 
         //Public Folder
         this.app.use( express.static('public') );
+
+        this.app.use(express.json());
 
 
     }
