@@ -2,11 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pokes = require('../controllers/pokemon');
 
-router.get('/pokes', (req, res) => {
-    pokes.getPokemons().then(pokemons => {
-        res.json(pokemons);
-    });
-});
-router.post('/pokes')
+router.get('/pokes', pokes.getPokemons);
+router.post('/pokes', pokes.savePokemon);
 
 module.exports = router;
