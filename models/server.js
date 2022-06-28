@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const routes = require('../routes/pokemon')
 
 
 class Server{
@@ -13,7 +14,11 @@ class Server{
 
         //Application Routes
         this.routes();
+
+        this.app.use('/api', routes);
+
     }
+
 
     middlewares(){
 
